@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { Info, CheckCircle, AlertCircle, XCircle, Plus, Trash2, TrendingUp } from 'lucide-react';
-import { RadialBarChart, RadialBar, PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { CheckCircle, AlertCircle, XCircle, Plus, Trash2 } from 'lucide-react';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import './Bankability.css';
 
 const DEBT_CATEGORIES = [
@@ -20,7 +20,6 @@ export default function Bankability() {
   const [income, setIncome] = useState(8000);
   const [debts, setDebts] = useState(DEBT_CATEGORIES.map(d => ({ ...d })));
   const [newDebt, setNewDebt] = useState({ label: '', type: 'bad', monthly: 0 });
-  const [showResult, setShowResult] = useState(false);
 
   const totalDebt = useMemo(() => debts.reduce((sum, d) => sum + (Number(d.monthly) || 0), 0), [debts]);
   const dsr = useMemo(() => income > 0 ? (totalDebt / income) * 100 : 0, [totalDebt, income]);
