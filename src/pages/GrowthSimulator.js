@@ -36,15 +36,8 @@ export default function GrowthSimulator() {
   const mode = RENTAL_MODES_FIXED.find(m => m.id === rentalMode);
   const effectiveRent = baseRent * mode.multiplier;
   const annualRent = effectiveRent * 12;
-  const netYield = ((annualRent - monthlyInstallment * 12) / propPrice) * 100;
   const cashROI = ((annualRent - monthlyInstallment * 12) / downpayment) * 100;
   const cashOnlyROI = (annualRent * 0.05) / propPrice * 100; // simplified
-
-  // ROI comparison data
-  const roiData = [
-    { name: 'Cash Purchase', roi: cashOnlyROI.toFixed(1), color: 'var(--accent-rust)', capital: propPrice },
-    { name: `${ltvPct}% Loan`, roi: cashROI.toFixed(1), color: 'var(--accent-sage)', capital: downpayment },
-  ];
 
   // Snowball data
   const snowballData = useMemo(() => {
