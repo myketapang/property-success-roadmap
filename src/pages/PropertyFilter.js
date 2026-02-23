@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { MapPin, Building, TrendingUp, Star, Filter, ChevronDown } from 'lucide-react';
+import { MapPin, Star } from 'lucide-react';
 import './PropertyFilter.css';
 
 const PROPERTIES = [
