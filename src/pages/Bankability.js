@@ -77,7 +77,7 @@ export default function Bankability() {
           {/* Left: Inputs */}
           <div className="bank-inputs">
             {/* Income */}
-            <div className="card" style={{ animationDelay: '0.1s' }} className="card animate-fadeUp">
+            <div className="card animate-fadeUp" style={{ animationDelay: '0.1s' }}>
               <h3 className="card-title">Monthly Income</h3>
               <p className="card-sub">Total gross income (salary + allowances)</p>
 
