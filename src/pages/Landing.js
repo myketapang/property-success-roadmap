@@ -1,7 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, SlidersHorizontal, TrendingUp, Zap, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import './Landing.css';
 
 const pillars = [
