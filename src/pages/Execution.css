@@ -1,0 +1,310 @@
+.progress-overview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.po-left { flex: 1; }
+
+.po-pct { text-align: center; flex-shrink: 0; }
+
+.pct-value {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1;
+}
+
+.pct-label { font-size: 0.75rem; color: var(--stone); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Banker cards */
+.exec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.banker-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.banker-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.banker-avatar {
+  width: 52px;
+  height: 52px;
+  background: var(--beige);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.banker-info { flex: 1; }
+.banker-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--ink); }
+.banker-bank { font-size: 0.8rem; color: var(--stone); margin-top: 2px; }
+.banker-specialty { font-size: 0.78rem; color: var(--accent-gold); font-weight: 500; margin-top: 2px; }
+
+.banker-rating {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.banker-rating span {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.banker-deals {
+  font-size: 0.72rem;
+  color: var(--stone);
+}
+
+.banker-notes {
+  font-size: 0.85rem;
+  color: var(--stone);
+  line-height: 1.6;
+}
+
+.banker-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.banker-actions { display: flex; gap: 8px; margin-top: 4px; }
+
+/* Loan tracker */
+.loan-ref-card { }
+.ref-num { font-family: var(--font-mono); font-size: 0.9rem; color: var(--stone); margin-top: 4px; }
+
+.loan-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8A5F00;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  animation: pulse-ring 2s ease infinite;
+}
+
+.loan-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.loan-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: var(--beige);
+}
+
+.loan-stage {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  position: relative;
+}
+
+.ls-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.loan-stage.completed .ls-icon-wrap {
+  background: rgba(122,158,126,0.1);
+  border-color: var(--accent-sage);
+}
+
+.loan-stage.active .ls-icon-wrap {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 4px rgba(201,168,76,0.15);
+}
+
+.ls-content { flex: 1; }
+.ls-label { font-size: 0.9rem; font-weight: 500; color: var(--charcoal); }
+.ls-date { font-size: 0.78rem; color: var(--stone); font-family: var(--font-mono); margin-top: 2px; }
+
+.ls-status-badge {
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ls-status-badge.status-completed { background: rgba(122,158,126,0.12); color: #3D6B42; }
+.ls-status-badge.status-active { background: rgba(201,168,76,0.12); color: #8A5F00; }
+.ls-status-badge.status-pending { background: var(--beige); color: var(--stone); }
+
+/* Unit grid */
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.unit-card {
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--beige);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.unit-card.unit-available { border-color: rgba(122,158,126,0.3); background: rgba(122,158,126,0.04); }
+.unit-card.unit-reserved { border-color: rgba(201,168,76,0.3); background: rgba(201,168,76,0.04); }
+.unit-card.unit-sold { opacity: 0.5; }
+
+.unit-num { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; color: var(--ink); }
+.unit-floor { font-size: 0.72rem; color: var(--stone); margin-top: 2px; }
+.unit-type { font-size: 0.78rem; color: var(--charcoal); margin-top: 6px; font-weight: 500; }
+.unit-price { font-size: 0.8rem; color: var(--accent-sage); font-weight: 600; margin-top: 4px; font-family: var(--font-mono); }
+
+.unit-status-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.unit-status-label.available { color: #3D6B42; }
+.unit-status-label.reserved { color: #8A5F00; }
+.unit-status-label.sold { color: #8B3214; }
+
+/* Booking CTA */
+.cta-booking { }
+
+.booking-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.booking-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Checklist */
+.checklist-card { }
+
+.cl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cl-count {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  background: rgba(201,168,76,0.1);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.cl-items { display: flex; flex-direction: column; gap: 0; }
+
+.cl-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--beige);
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 6px;
+}
+
+.cl-item:last-child { border-bottom: none; }
+.cl-item:hover { background: var(--cream); padding-left: 10px; }
+
+.cl-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  color: var(--accent-sage);
+}
+
+.cl-checkbox.checked {
+  background: var(--accent-sage);
+  border-color: var(--accent-sage);
+  color: white;
+}
+
+.cl-label {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  transition: all 0.2s;
+}
+
+.cl-item.done .cl-label {
+  text-decoration: line-through;
+  color: var(--stone);
+}
+
+@media (max-width: 768px) {
+  .exec-grid { grid-template-columns: 1fr; }
+  .unit-grid { grid-template-columns: repeat(2, 1fr); }
+  .booking-inner { flex-direction: column; align-items: flex-start; }
+  .booking-actions { flex-direction: column; width: 100%; }
+  .booking-actions a { justify-content: center; }
+}
