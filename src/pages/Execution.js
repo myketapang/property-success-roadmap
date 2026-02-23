@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, CheckCircle, Clock, AlertCircle, ExternalLink, ChevronRight, Star } from 'lucide-react';
+import { Phone, MapPin, CheckCircle, Clock, ChevronRight, Star } from 'lucide-react';
 import './Execution.css';
 
 const BANKERS = [
