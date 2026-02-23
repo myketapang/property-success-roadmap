@@ -61,7 +61,7 @@ const CHECKLIST = [
 export default function Execution() {
   const [checklist, setChecklist] = useState(CHECKLIST);
   const [activeTab, setActiveTab] = useState('bankers');
-  const [loanReference, setLoanReference] = useState('MY-2025-004821');
+  const loanReference = 'MY-2025-004821';
 
   const toggleCheck = (catIdx, itemIdx) => {
     const updated = checklist.map((cat, ci) =>
